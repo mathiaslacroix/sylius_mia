@@ -1,27 +1,29 @@
-<?php echo "<h1>Work In Progress.</H1>";
+<?php
 
-// use App\Kernel;
-// use Symfony\Component\ErrorHandler\Debug;
-// use Symfony\Component\HttpFoundation\Request;
+// echo "it works";
 
-// require dirname(__DIR__).'/config/bootstrap.php';
+use App\Kernel;
+use Symfony\Component\ErrorHandler\Debug;
+use Symfony\Component\HttpFoundation\Request;
 
-// if ($_SERVER['APP_DEBUG']) {
-//     umask(0000);
+require dirname(__DIR__).'/config/bootstrap.php';
 
-//     Debug::enable();
-// }
+if ($_SERVER['APP_DEBUG']) {
+    umask(0000);
 
-// if ($trustedProxies = $_SERVER['TRUSTED_PROXIES'] ?? $_ENV['TRUSTED_PROXIES'] ?? false) {
-//     Request::setTrustedProxies(explode(',', $trustedProxies), Request::HEADER_X_FORWARDED_ALL ^ Request::HEADER_X_FORWARDED_HOST);
-// }
+    Debug::enable();
+}
 
-// if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? $_ENV['TRUSTED_HOSTS'] ?? false) {
-//     Request::setTrustedHosts([$trustedHosts]);
-// }
+if ($trustedProxies = $_SERVER['TRUSTED_PROXIES'] ?? $_ENV['TRUSTED_PROXIES'] ?? false) {
+    Request::setTrustedProxies(explode(',', $trustedProxies), Request::HEADER_X_FORWARDED_ALL ^ Request::HEADER_X_FORWARDED_HOST);
+}
 
-// $kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
-// $request = Request::createFromGlobals();
-// $response = $kernel->handle($request);
-// $response->send();
-// $kernel->terminate($request, $response);
+if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? $_ENV['TRUSTED_HOSTS'] ?? false) {
+    Request::setTrustedHosts([$trustedHosts]);
+}
+
+$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
+$request = Request::createFromGlobals();
+$response = $kernel->handle($request);
+$response->send();
+$kernel->terminate($request, $response);
