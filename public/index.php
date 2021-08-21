@@ -1,6 +1,6 @@
 <?php
 
-echo "It works in production";
+// echo "It works in production";
 
 use App\Kernel;
 use Symfony\Component\ErrorHandler\Debug;
