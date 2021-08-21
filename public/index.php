@@ -1,6 +1,6 @@
 <?php
 
-echo "it works in develppment";
+echo "it works in development";
 
 use App\Kernel;
 use Symfony\Component\ErrorHandler\Debug;
