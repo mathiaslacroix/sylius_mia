@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 echo "Work in production!";
+=======
+echo "Work in process!";
+>>>>>>> dev
 
 use App\Kernel;
 use Symfony\Component\ErrorHandler\Debug;
