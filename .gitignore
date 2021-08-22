@@ -42,5 +42,5 @@
 ###< lexik/jwt-authentication-bundle ###
 
 
-# creation personnelle
-hook_post_utpdate
+###> hoook ###
+/hook_post_update
