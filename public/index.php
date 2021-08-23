@@ -1,6 +1,6 @@
 <?php
 
-echo "Work in process!";
+echo "Work in process !";
 
 use App\Kernel;
 use Symfony\Component\ErrorHandler\Debug;
